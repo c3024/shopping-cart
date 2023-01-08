@@ -1,3 +1,61 @@
+.nav-list {
+  display: flex;
+  justify-content: space-around;
+  height: 50px;
+  background-color: rgb(82, 80, 80);
+  color: white;
+  align-items: center;
+  list-style: none;
+  margin-top: 0;
+}
+
+li {
+  color: white;
+}
+
+.fruit {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: space-between; */
+  align-items: center;
+  gap: 10px;
+}
+
+.fruits-catalogue {
+  display: flex;
+  /* gap: 20px; */
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+img {
+  border-radius: 10px;
+}
+
+.fruit-quantity {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+input {
+  width: 100px;
+}
+
+.fruit-quantity button {
+  font-weight: bold;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  margin-right: 50px;
+}
+
+.cart-quantity {
+  margin-left: auto;
+}
 .App {
   text-align: center;
 }
