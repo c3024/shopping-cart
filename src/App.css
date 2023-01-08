@@ -51,10 +51,24 @@ input {
   justify-content: center;
   gap: 50px;
   margin-right: 50px;
+  width: 500px;
+  margin: auto;
+  align-items: center;
+}
+
+.cart-item img {
+  margin: auto;
 }
 
 .cart-quantity {
   margin-left: auto;
+}
+
+.shopping-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 .App {
   text-align: center;

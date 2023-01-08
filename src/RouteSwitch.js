@@ -20,12 +20,57 @@ const fruits = [
 const RouteSwitch = () => {
     const [cartItems, setCartItems] = useState([]);
     const addToCart = (id, qty) => {
-        const addedFruit = fruits.filter(fruit => (
-            id === fruit.id
-        ));
-        console.log(addedFruit);
-        setCartItems([...cartItems, {...addedFruit, quantity: qty}]);
         console.log(cartItems);
+        let addedFruit = fruits.filter((fruit) => (
+            id === fruit.id
+        ))
+        //console.log(addedFruit);
+        addedFruit = Object.assign({}, addedFruit[0], {quantity: Number(qty)});
+        //console.log(addedFruit);
+        let bool = false;
+        let updatedCartItems = cartItems.map((fruit) => {
+            if (fruit.id === addedFruit.id) {
+                fruit.quantity = Number(fruit.quantity) + Number(qty);
+                bool = true;
+            }
+            return fruit;
+        });
+        if (!bool) {
+            updatedCartItems = [...updatedCartItems, addedFruit];
+        }
+        setCartItems(updatedCartItems);
+
+
+        // const updatedCart = cartItems.map((fruit) => {
+        //     if (id === fruit.id) {
+        //         console.log(fruit);
+        //         return fruit.quantity += qty;
+        //     }
+        //     else {
+        //         return fruit;
+        //     }
+        // });
+        // console.log(updatedCart);
+        /* if (addedFruit.length === 0) {
+            addedFruit = fruits.filter((fruit) => (
+                id === fruit.id
+            ))
+            addedFruit[0] = {...addedFruit[0], quantity: qty};
+        } else {
+            addedFruit[0].quantity += qty;
+        } */
+        // setCartItems([...cartItems, updatedCart[0]]);
+        // if (cartItems.includes(addedFruit[0])) {
+        //     const prevQuantity = cartItems.filter(fruit => (
+        //         addedFruit[0].id === fruit.id
+        //     ));
+        //     console.log(prevQuantity);
+        //     addedFruit[0].quantity = prevQuantity + qty;
+        //     setCartItems([...cartItems, addedFruit[0]]);
+        // } else {
+        //     addedFruit[0].quantity = qty;
+        //     setCartItems([...cartItems, addedFruit[0]]);
+        // }
     }
     return (
         <Routes>
